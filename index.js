@@ -1,11 +1,15 @@
-const express = require('express');
-const index = express();
 
-index.get("/", (req,res)=>{
+const express =require("express");
+const app=express();
+const PORT= 8081;
+app.listen(PORT,
+    ()=>console.log(`running on http://localhost:${PORT}`)
+);
+
+app.get("/", (req,res)=>{
     console.log("salut les gars");
 });
 
-index.listen(3000);
-console.log("attente de reques au port 3000");
-
-//tuigjugug
+app.get("/test", (req,res)=>{
+    console.log("mayday");
+});
