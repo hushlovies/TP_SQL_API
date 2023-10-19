@@ -1,6 +1,5 @@
 const express = require('express');
-const sqlite3 = require('sqlite3');
-const fs = require('fs');
+const routerUtilisateurs = require("./routers/utilisateur");
 const index = express();
 
 const db = new sqlite3.Database(); 
@@ -12,14 +11,11 @@ index.get("/", (req,res)=>{
 
 
 
-const sql = fs.readFileSync('bdd.sql', 'utf-8');
-db.exec(sql, (err) => {
-  if (err) {
-    console.error('Erreur lors de la création de la base de données :', err);
-  } else {
-    console.log('Base de données créée avec succès.');
-  }
-});
+
+index.use(express.urlencoded({ extended: true }));
+index.use(express.json());
+
+index.use("/TP_SQL_API/", routerUtilisateurs);
 
 
 index.listen(3000, () => {
