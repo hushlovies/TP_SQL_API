@@ -1,15 +1,28 @@
 
-const express =require("express");
-const app=express();
-const PORT= 8081;
-app.listen(PORT,
-    ()=>console.log(`running on http://localhost:${PORT}`)
-);
+const express = require('express');
+const routerUtilisateurs = require("./routers/utilisateur");
+const index = express();
 
-app.get("/", (req,res)=>{
+const db = new sqlite3.Database(); 
+
+index.get("/", (req,res)=>{
     console.log("salut les gars");
 });
 
-app.get("/test", (req,res)=>{
-    console.log("mayday");
-});
+
+
+
+
+index.use(express.urlencoded({ extended: true }));
+index.use(express.json());
+
+index.use("/TP_SQL_API/", routerUtilisateurs);
+
+
+index.listen(3000, () => {
+    console.log('Serveur API en cours d\'exécution sur le port 3000');
+  });
+
+
+
+
