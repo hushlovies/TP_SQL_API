@@ -1,0 +1,33 @@
+const express =require("express");
+router= express.Router();
+const db= require("../db");
+
+router.get('/produit')
+const service= require('../Services/product.service')
+router.get('/',async(req,res)=>{
+    const products= await service.getAllProducts()
+    res.send(service);
+})
+// router.put('/produit', (req,res)=>{
+//     db.query(`INSERT INTO produits(NomProduit,Prix,Stock) VALUES(?,?,?)`)
+//     .then
+//     function(err,res){
+//     console.log(res)
+// }
+// ); 
+// });
+
+// const createProduct = async (req, res) => {
+//     try {
+//       const userData = req.body;
+//       const newProduct = await productService.createProduct(userData);
+//       res.status(201).json(newProduct);
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ error: 'Failed to create product' });
+//     }
+//   };
+
+
+
+module.exports=router;

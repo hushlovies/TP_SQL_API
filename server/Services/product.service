@@ -1,0 +1,25 @@
+const express =require("express");
+router= express.Router();
+const db= require("../db");
+
+
+// const query =
+//   "INSERT INTO `product` (NomProduit, Prix,Stock) VALUES (?, ?, ?)";
+// const values = [NomProduit, Prix, Stock];
+
+// db.query(query, values, (err, res) => {
+//   if (err) {
+//     reject(
+//       new Error("Failed to register user in the database" + err)
+//     );
+//   } else {
+//     const insertedProduct = res.insertId;
+//     resolve({ NomProduit, Prixl, Stock });
+//   }
+// });
+
+
+module.exports.getAllProducts= async()=>{
+    const[prod]=await db.query('select * from utilisateurs')
+    return prod;
+}
