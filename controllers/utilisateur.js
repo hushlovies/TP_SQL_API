@@ -1,5 +1,7 @@
-const client = require("../db/connect");
+
+const client = require("../db")
 const { Utilisateur } = require("../models/utilisateur");
+
 
 const ajouterUtilisateur = async (req, res) => {
     try {
@@ -10,7 +12,6 @@ const ajouterUtilisateur = async (req, res) => {
         req.body.Email
       );
       let result = await client
-        .db()
         .collection("utilisateurs")
         .insertOne(utilisateur);
   
@@ -21,10 +22,19 @@ const ajouterUtilisateur = async (req, res) => {
     }
   };
   
-  const getUtilisateurs = async (req, res) => {
-    try {
-      let cursor = client
-        .db()
+  const getUtilisateurs = (req, res) => {
+    //try {
+      console.log("gneeeeeeeeee")
+      client.query(
+        'SELECT * FROM `utilisateurs`',
+        function(err, results, fields) {
+          console.log(results); // results contains rows returned by server
+          console.log(fields);
+          res.status(200).json('dsqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq') // fields contains extra meta data about results, if available
+        }
+      );
+
+        /*.db()
         .collection("utilisateurs")
         .find()
         .sort({ Nom: 1 });
@@ -37,7 +47,7 @@ const ajouterUtilisateur = async (req, res) => {
     } catch (error) {
       console.log(error);
       res.status(501).json(error);
-    }
+    }*/
   };
   
   const getUtilisateur = async (req, res) => {
