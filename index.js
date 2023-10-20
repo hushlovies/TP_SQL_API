@@ -58,6 +58,7 @@ index.delete('/archives/:id', (req, res) => {
 //te
 
 index.post('/archives', (req, res) => {
+  
     db.query(
         'INSERT INTO archives (Nom, type, quantite, Email) VALUES (?, ?, ?, ?)',
         [Nom, type, quantite, Email],
