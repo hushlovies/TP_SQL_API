@@ -6,21 +6,4 @@ const db = mysql.createPool({
   database: 'datacommande'
 });
 
-
-
-/*function queryDatabase(query) {
-  return new Promise((resolve, reject) => {
-    db.query(query, (err, res) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(res);
-      }
-    });
-  });
-}*/
-
-
-
-
 module.exports = db;
