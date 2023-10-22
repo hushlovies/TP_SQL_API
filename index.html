@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head><link href="style.css" rel="stylesheet" type="text/css">
+      <title> <meta charset="UTF-8">
+              <title>Add User</title> 
+      </title>
+   </head>
+   <body>
+      <div class=”Box”>
+         <h1>Ajouter de l'information d'utilisateur</h1>
+         <section>
+            <p><form method="post" action="/ma-page-de-traitement">
+               <p>
+                   <label for="prenom">Prénom :</label>
+                   <input type="text" name="prenom" id="prenom" placeholder="Ex. : Mathieu" size="30" maxlength="20">
+               </p>
+               <p>
+                   <label for="Nom">Nom :</label>
+                   <input type="text" name="nom" id="nom" placeholder="Ex. : Nom" size="30" maxlength="20">
+               </p>
+               <p>
+                   <label for="age">Age :</label>
+                   <input type="number" id="age" name="age" min="10" max="100">
+               </p>
+               <p>
+                  <label for="email">Email :</label>
+                  <input type="email" id="email" pattern=".+@globex\.com" size="30" required>
+               </p>
+               <p>
+                  <input type="submit" value="Envoyer"/>   
+               </p>
+               </form>
+            </p>
+         <h1>Liste des utilisateurs</h1>
+            <p><form method="post" action="">
+               <p>
+                 <select name="dropdown" id="dropdown"> 
+                     <option name="Utilisateur" value="1">u1</option>
+                     <option name="Utilisateur" value="2">u2</option>
+                     <option name="Utilisateur" value="3" selected>u3</option>
+                 </select>
+                 <input type="submit" value="Supprimer"/>&ensp;<input type="submit" value="Modifier"/>
+               </p>
+               </form>
+
+            </p>
+         </section>
+      </div>
+   </body>
+</html>

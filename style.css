@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(42, 157, 192); /* Le fond de la page sera color choisi */
+    color: white; /* Le texte de la page sera blanc */
+}
+
+h1 {
+    color: purple;
+    text-align: center;
+}
+
+form {
+    /* On centre le formulaire */
+    margin: 0 auto;
+    width: 400px;
+    /* Le contour du formulaire */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+
+button {
+    /* On aligne les boutons avec les champs texte. */
+    padding-left: 90px; /* La même taille que les libellés */
+    background-color: rgb(11, 0, 128);
+    padding: 10px;
+
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: rgb(32, 16, 75);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
