@@ -22,7 +22,7 @@ function App() {
       
         <h1>testons</h1>
         {getData.map((archive,i)=>{
-          return <p key={i}>{archive.type}</p>
+          return <p key={i}>{archive.Nom}</p>
         })}
 
 
