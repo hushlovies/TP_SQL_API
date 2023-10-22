@@ -33,7 +33,7 @@ function Archives() {
        <div className='listArchive' >
     
             {archives.map((archive)=>(
-                <div key={archive.ID}>
+                <div className='oneCard' key={archive.ID}>
                     <p>Nom: {archive.Nom}  </p>
                     <p>type :{archive.type}  </p>
                     <p>Quantite : {archive.quantite}  </p>

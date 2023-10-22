@@ -12,7 +12,9 @@ code {
     monospace;
 }
 
-
+input{
+  border: 1px;
+}
 .card{
   background-color: aquamarine;
 
@@ -48,4 +50,8 @@ button{
 .addButton{
   display: flex;
   text-align: center;
+}
+
+.oneCard{
+  border: 5px solid black;
 }
