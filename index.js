@@ -11,17 +11,26 @@ index.use(express.urlencoded({ extended: true }));
 index.use(express.json());
 index.use(bodyParser.json());
 
+//test
+index.get("/", (req,res)=>{
+  db.query('SELECT * FROM utilisateurs',
+  function(err,results){
+      console.log(results)
+      res.status(200).json(results)
+  }
+  );
+});
 
 //const db = new sqlite3.Database(); 
 
 index.get("/commandes/", (req,res)=>{
-    db.query('SELECT * FROM commandes',
-    function(err,results){
-        console.log(results)
-        res.status(200).json(results)
-    }
-    );
-    
+  db.query('SELECT * FROM commandes',
+  function(err,results){
+      console.log(results)
+      res.status(200).json(results)
+  }
+  );
+  
 });
 index.get('/archives', (req, res) => {
     //try {
