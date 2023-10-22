@@ -1,31 +1,20 @@
 
-// import React,{useEffect,useState} from 'react';
-import React,{useEffect,useState} from 'react';
-import './App.css';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Archives from './Archives';
+import Add from './Add';
+import Update from './Update';
 
 function App() {
-
-  const [getData,setData] =useState([{}])
-
-  useEffect( ()=> {
-    fetch("/archives").then(
-      response => response.json()
-    ).then(
-      data =>{
-        console.log(data)
-        setData(data)
-      }
-    )
-  },[])
   return (
-    <div>
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Archives/>}/>
+          <Route path='/add' element={<Add/>}/>
+          <Route path='/update/:id' element={<Update/>}/>
+        </Routes>
+      </BrowserRouter>
       
-        <h1>testons</h1>
-        {getData.map((archive,i)=>{
-          return <p key={i}>{archive.Nom}</p>
-        })}
-
-
     </div>
     
   );

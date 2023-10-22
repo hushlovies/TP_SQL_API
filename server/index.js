@@ -11,7 +11,14 @@ index.use(express.urlencoded({ extended: true }));
 index.use(express.json());
 index.use(bodyParser.json());
 
-
+index.get("/", (req,res)=>{
+  db.query('SELECT * FROM utilisateurs',
+  function(err,results){
+      console.log(results)
+      res.status(200).json(results)
+  }
+  );
+});
 index.get("/commandes/", (req,res)=>{
   db.query('SELECT * FROM commandes',
   function(err,results){
@@ -99,11 +106,6 @@ index.post('/archives', (req, res) => {
     }
   });
 });
-
-
-
-
-
 
 
 index.listen(PORT,
