@@ -8,7 +8,7 @@ Jemima, Kaira, Vi
 then go to the folder
 
 ## Tools used
-database : commande
-frondend : react
-back-end used: node JS
+database : commande \
+front-end : react \
+back-end used: node JS \
 
