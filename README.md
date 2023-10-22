@@ -1,8 +1,13 @@
 # TP_SQL_API
-
+## Group
+Jemima, Kaira, Vi 
 ## remeber to install modules for each folder
-<p>sdsd</p>
-### groupe: Jemima, Kaira, Vi
-### database used: commande
-### frondend used: react
-### back-end used: node JS
+```bash
+  npm install 
+```
+then go to the folder
+
+## Tools used
+database : commande
+frondend : react
+back-end used: node JS
